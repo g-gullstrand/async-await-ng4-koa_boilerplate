@@ -1,4 +1,4 @@
-# ArduinoAutomation
+# Async-await, ng4, koa boilerplate
 
 The Angular app was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1, and set up to proxy the http calls to port 3000 to the Koa.js server. See proxy.conf.json
 // NOTE the proxy is only for development as the production build is targeting the dist folder where the compiled Angular app resides.
