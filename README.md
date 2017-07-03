@@ -5,11 +5,11 @@ The Angular app was generated with [Angular CLI](https://github.com/angular/angu
 
 ## Development server
 
-Frontend
+Backend
 Gulp, browsersync and nodemon is used for live reload of the server.
   - Run `gulp serve` to start the backend dev server.
 
-Backend
+Frontend
 The Angular app uses the proxy prefix to ng start.
   - Run `npm run serve-dev` to fire up the Angular app with the proxy. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files. Any request sent to localhost will be redirected to port 3000 as explained above.
 
