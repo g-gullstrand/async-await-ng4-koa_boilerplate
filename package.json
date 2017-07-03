@@ -1,11 +1,15 @@
 {
-  "name": "arduino-automation",
-  "version": "0.0.0",
+  "name": "koa-ng4-bootstrap_boilerplate",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
+    "serve-dev": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build",
+    "clean-server": "rm -rf server-dist && mkdir server-dist",
+    "build-client": "ng build -prod",
+    "build-server": "npm run clean-server && babel server -d server-dist -s --presets es2015-node5,stage-3",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -23,7 +27,17 @@
     "@angular/router": "^4.0.0",
     "core-js": "^2.4.1",
     "rxjs": "^5.1.0",
-    "zone.js": "^0.8.4"
+    "zone.js": "^0.8.4",
+
+    "babel-core": "^6.9.1",
+    "babel-preset-es2015-node5": "^1.2.0",
+    "babel-preset-stage-3": "^6.5.0",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^3.1.0",
+    "koa-router": "^7.0.1",
+    "koa-send": "^3.2.0",
+    "koa-static": "^2.0.0",
+    "koa-views": "^5.0.2"
   },
   "devDependencies": {
     "@angular/cli": "1.1.1",
@@ -43,6 +57,17 @@
     "protractor": "~5.1.2",
     "ts-node": "~3.0.4",
     "tslint": "~5.3.2",
-    "typescript": "~2.3.3"
+    "typescript": "~2.3.3",
+
+    "babel-cli": "^6.24.1",
+    "babel-eslint": "^6.1.2",
+    "babel-polyfill": "^6.9.1",
+    "babel-register": "^6.14.0",
+    "browser-sync": "^2.13.0",
+    "eslint": "^3.5.0",
+    "eslint-plugin-async-await": "0.0.0",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.1.0",
+    "watch": "^1.0.1"
   }
 }

@@ -1,18 +1,34 @@
 # ArduinoAutomation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1.
+The Angular app was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.1, and set up to proxy the http calls to port 3000 to the Koa.js server. See proxy.conf.json
+// NOTE the proxy is only for development as the production build is targeting the dist folder where the compiled Angular app resides.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Frontend
+Gulp, browsersync and nodemon is used for live reload of the server.
+  - Run `gulp serve` to start the backend dev server.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|module`.
+Backend
+The Angular app uses the proxy prefix to ng start.
+  - Run `npm run serve-dev` to fire up the Angular app with the proxy. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files. Any request sent to localhost will be redirected to port 3000 as explained above.
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+Frontend
+Run `npm run build-client` to build the client side Angular app. The build artifacts will be stored in the `dist/` directory.
+
+Backend
+Run `npm run build-server` to build the backend side Koa app. The build artifacts will be stored in the `server-dist/` directory.
+The `app.js` file in the root folder needs to be compiled using babel.
+
+
+Run `babel app.js --out-file server.js`. Or see https://babeljs.io/docs/usage/cli/ for updated docs.
+
+
+## Deployment
+  Note that the `dist` folder is currently in the .gitignore file and wile hence not be uploaded to your repo. Comment out the line in the .gitignore file to include it in your git commits
+
 
 ## Running unit tests
 
