@@ -22,9 +22,11 @@ Backend
 Run `npm run build-server` to build the backend side Koa app. The build artifacts will be stored in the `server-dist/` directory.
 The `app.js` file in the root folder needs to be compiled using babel.
 
+**IMPORTANT**
+Change the paths in the generated server.js file to ----> 'dist-server' or the app wil try to load the es6 files which will result in a crash.
 
-Run `babel app.js --out-file server.js`. Or see https://babeljs.io/docs/usage/cli/ for updated docs.
-
+const middlewares = require('./server-dist/middlewares/error.middleware');
+const routes = require('./server-dist/routes');
 
 ## Deployment
   Note that the `dist` folder is currently in the .gitignore file and wile hence not be uploaded to your repo. Comment out the line in the .gitignore file to include it in your git commits
